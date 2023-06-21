@@ -18,6 +18,8 @@ Page({
     })
   },
   onLoad() {
+    console.log('index.js onLoad');
+
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true
