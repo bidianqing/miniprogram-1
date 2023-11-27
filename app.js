@@ -53,7 +53,15 @@ App({
     })
   },
   sendMessage(){
-    console.log('发送消息')
+    let self = this;
+    if(self.globalData.isConnected === 0){
+      wx.showToast({
+        title: '发送失败',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
     wx.sendSocketMessage({
       data: '{"type":1, "target":"SendMessage", "arguments":["hello"]}'
     })
