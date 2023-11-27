@@ -1,6 +1,7 @@
 // app.js
 App({
   onLaunch() {
+    console.log('执行onLaunch方法')
     let self = this;
     
     self.start();
@@ -11,8 +12,9 @@ App({
       self.start();
     })
 
-    wx.onSocketError(function(){
+    wx.onSocketError(function(errMsg){
       console.log('onSocketError');
+      console.log(errMsg);
       self.globalData.isConnected = 0;
       self.start();
     })
