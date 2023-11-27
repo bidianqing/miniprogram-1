@@ -52,6 +52,12 @@ App({
       })
     })
   },
+  sendMessage(){
+    console.log('发送消息')
+    wx.sendSocketMessage({
+      data: '{"type":1, "target":"SendMessage", "arguments":["hello"]}'
+    })
+  },
   globalData: {
     userInfo: null,
     isConnected: 0,
