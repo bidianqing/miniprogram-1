@@ -5,6 +5,10 @@ Page({
   data: {
     logs: []
   },
+  onShow(){
+    let self = this;
+    self.getTabBar().setData({ active : 1 })
+  },
   onLoad() {
     let self = this;
 

@@ -7,6 +7,10 @@ Page({
     motto: 'Hello World',
     userInfo: {}
   },
+  onShow(){
+    let self = this;
+    self.getTabBar().setData({ active : 0 })
+  },
   onLoad() {
     console.log('index.js onLoad');
   },
