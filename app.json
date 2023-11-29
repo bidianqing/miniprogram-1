@@ -21,6 +21,9 @@
     }, {
       "pagePath": "pages/logs/logs",
       "text": "接口"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "接口"
     }]
   },
   "sitemapLocation": "sitemap.json",
