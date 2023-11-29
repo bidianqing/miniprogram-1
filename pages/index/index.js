@@ -13,8 +13,5 @@ Page({
   },
   onLoad() {
     console.log('index.js onLoad');
-  },
-  send: function(e) {
-    app.sendMessage();
   }
 })

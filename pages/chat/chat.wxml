@@ -1,0 +1,15 @@
+<view>
+  <van-cell-group>
+    <van-field
+      value="{{ msg }}"
+      center
+      clearable
+      border="{{ false }}"
+      use-button-slot
+    >
+    <van-button slot="button" size="small" type="primary" bind:click="send">
+      发送
+    </van-button>
+  </van-field>
+</van-cell-group>
+</view>

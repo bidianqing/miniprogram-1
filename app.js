@@ -52,7 +52,7 @@ App({
       })
     })
   },
-  sendMessage(){
+  sendMessage(message){
     let self = this;
     if(self.globalData.isConnected === 0){
       wx.showToast({

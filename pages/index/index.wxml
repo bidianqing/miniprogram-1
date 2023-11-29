@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view class="container">
-  <van-button type="primary" bind:click="send">发送</van-button>
+  
 </view>

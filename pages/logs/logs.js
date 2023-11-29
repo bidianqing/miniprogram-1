@@ -5,6 +5,11 @@ Page({
   data: {
     logs: []
   },
+  chat(){
+    wx.navigateTo({
+      url: '/pages/chat/chat',
+    })
+  },
   onShow(){
     let self = this;
     self.getTabBar().setData({ active : 1 })
