@@ -1,3 +1,11 @@
-<view class="container">
-  <van-button type="primary" >我的</van-button>
+<view>
+  <van-cell-group inset>
+    <van-cell title="我喜欢的" is-link size="large" />
+    <van-cell title="喜欢我的" is-link size="large" />
+    <van-cell title="互相喜欢" is-link size="large" />
+  </van-cell-group>
+
+  <view>
+    <van-notify id="van-notify" />
+  </view>
 </view>
