@@ -6,6 +6,9 @@ import { useCascaderAreaData } from '@vant/area-data';
 
 Page({
   data: {
+    filterOptions:{
+      gender: ''
+    },
     cascaderValue: '',
     cascaderTitle: '',
     hometownText: '',
@@ -35,6 +38,10 @@ Page({
     areaIsShow: false,
     areaTarget: ''
   },
+  onGenderChange(e){
+    let self = this;
+    self.setData({ 'filterOptions.gender': e.detail });
+  },
   chat(){
     wx.navigateTo({
       url: '/pages/chat/chat',
@@ -49,6 +56,7 @@ Page({
   },
   closeFilterPopup() {
     this.setData({ filterIsShow: false });
+    console.log(this.data.filterOptions);
   },
   closeAreaPopup(){
     this.setData({ areaIsShow: false, areaTarget : '' });

@@ -8,21 +8,35 @@
   </van-button>
 
   <view>
-    <van-popup show="{{ filterIsShow }}" bind:close="closeFilterPopup" round position="bottom" custom-style="height: 60%" >
+    <van-popup closeable show="{{ filterIsShow }}" bind:close="closeFilterPopup" round position="bottom" custom-style="height: 60%" >
 
-      <van-field model:value="{{ hometownText }}" is-link readonly label="家乡" placeholder="请选择家乡" bind:tap="openHometownArea" />
-      <van-field model:value="{{ locationText }}" is-link readonly label="目前所在地" placeholder="请选择目前所在地" bind:tap="openLocationArea" />
+        <van-cell center value=""  custom-style="height:50px">
+          
+        </van-cell>
+        <van-cell title="性别：" center title-width='110px' custom-style="height:45px">
+          <van-radio-group value="{{ filterOptions.gender }}" direction="horizontal" bind:change="onGenderChange">
+            <van-radio name="1">男</van-radio>
+            <van-radio name="2">女</van-radio>
+            <van-radio name="-1">不限</van-radio>
+          </van-radio-group>
+        </van-cell>
+        <van-cell title='家乡：' center title-width='110px' custom-style="height:45px">
+          <van-field border="{{ false }}" model:value="{{ hometownText }}" is-link readonly placeholder="请选择家乡" bind:tap="openHometownArea" />
+        </van-cell>
+        <van-cell title='目前所在地：' center title-width='110px' custom-style="height:45px" >
+          <van-field border="{{ false }}" model:value="{{ locationText }}" is-link readonly placeholder="请选择目前所在地" bind:tap="openLocationArea"  />
+        </van-cell>
 
-      <van-popup show="{{ areaIsShow }}" round position="bottom" custom-style="height: 40%">
-        <van-cascader
-          wx:if="{{ areaIsShow }}"
-          value="{{ cascaderValue }}"
-          title="{{ cascaderTitle }}"
-          options="{{ cascaderAreaData }}"
-          bind:close="closeAreaPopup"
-          bind:finish="areaFinish"
-        />
-      </van-popup>
+        <van-popup show="{{ areaIsShow }}" round position="bottom" custom-style="height: 40%">
+          <van-cascader
+            wx:if="{{ areaIsShow }}"
+            value="{{ cascaderValue }}"
+            title="{{ cascaderTitle }}"
+            options="{{ cascaderAreaData }}"
+            bind:close="closeAreaPopup"
+            bind:finish="areaFinish"
+          />
+        </van-popup>
 
     </van-popup>
   </view>
