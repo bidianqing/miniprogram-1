@@ -11,6 +11,6 @@ Page({
   },
   send: function(e) {
     let self = this;
-    app.sendMessage(111);
+    app.sendMessage(self.data.msg);
   }
 })

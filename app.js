@@ -30,6 +30,7 @@ App({
   },
   receiveMessage(message){
     let self = this;
+    wx.vibrateLong();
     console.log('receiveMessage方法被调用，入参：' + message);
   },
   start(){
@@ -63,7 +64,7 @@ App({
       return;
     }
     wx.sendSocketMessage({
-      data: '{"type":1, "target":"SendMessage", "arguments":["hello"]}'
+      data: `{"type":1, "target":"SendMessage", "arguments":["${message}"]}`
     })
   },
   globalData: {
