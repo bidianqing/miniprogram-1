@@ -3,4 +3,27 @@
   <van-button slot="button" size="small" type="primary" bind:click="chat">
       发消息
   </van-button>
+  <van-button slot="button" size="small" type="primary" bind:click="showFilterPopup">
+      过滤
+  </van-button>
+
+  <view>
+    <van-popup show="{{ filterIsShow }}" bind:close="closeFilterPopup" round position="bottom" custom-style="height: 60%" >
+
+      <van-field model:value="{{ hometownText }}" is-link readonly label="家乡" placeholder="请选择家乡" bind:tap="openHometownArea" />
+      <van-field model:value="{{ locationText }}" is-link readonly label="目前所在地" placeholder="请选择目前所在地" bind:tap="openLocationArea" />
+
+      <van-popup show="{{ areaIsShow }}" round position="bottom" custom-style="height: 40%">
+        <van-cascader
+          wx:if="{{ areaIsShow }}"
+          value="{{ cascaderValue }}"
+          title="{{ cascaderTitle }}"
+          options="{{ cascaderAreaData }}"
+          bind:close="closeAreaPopup"
+          bind:finish="areaFinish"
+        />
+      </van-popup>
+
+    </van-popup>
+  </view>
 </view>

@@ -1,9 +1,39 @@
 // logs.js
 const util = require('../../utils/util.js')
+import { areaList } from '@vant/area-data';
+import { useCascaderAreaData } from '@vant/area-data';
+//const cascaderAreaData = useCascaderAreaData();
 
 Page({
   data: {
-    logs: []
+    cascaderValue: '',
+    cascaderTitle: '',
+    hometownText: '',
+    hometownValue: '',
+    locationText: '',
+    locationValue: '',
+    areaList,
+    cascaderAreaData:[
+      {
+        text: '河北省',
+        value: '330000',
+        children: [
+          {
+            text: '石家庄市',
+            value: '130100',
+            children: null
+          },
+          {
+            text: '唐山市',
+            value: '130200',
+            children: null
+          }
+        ],
+      }
+    ],
+    filterIsShow: false,
+    areaIsShow: false,
+    areaTarget: ''
   },
   chat(){
     wx.navigateTo({
@@ -14,12 +44,46 @@ Page({
     let self = this;
     self.getTabBar().setData({ active : 1 })
   },
+  showFilterPopup() {
+    this.setData({ filterIsShow: true });
+  },
+  closeFilterPopup() {
+    this.setData({ filterIsShow: false });
+  },
+  closeAreaPopup(){
+    this.setData({ areaIsShow: false, areaTarget : '' });
+  },
+  openHometownArea(){
+    let self = this;
+    self.setData({ areaIsShow: true, areaTarget: 'hometown', cascaderTitle: '请选择家乡', cascaderValue: self.data.hometownValue });
+  },
+  openLocationArea(){
+    let self = this;
+    self.setData({ areaIsShow: true, areaTarget: 'location', cascaderTitle: '请选择目前所在地', cascaderValue: self.data.locationValue });
+  },
+  areaFinish(e){
+    let self = this;
+    console.log(e);
+    const { selectedOptions, value } = e.detail;
+    const text = selectedOptions
+        .map((option) => option.text || option.name)
+        .join('/');
+
+    if(self.data.areaTarget == 'hometown'){
+      self.setData({
+        hometownText: text,
+        hometownValue: value
+      });
+    } else if(self.data.areaTarget == 'location'){
+      self.setData({
+        locationText: text,
+        locationValue: value
+      });
+    }
+    
+    self.closeAreaPopup();
+  },
   onLoad() {
     let self = this;
-
-    self.setData({
-      logs : wx.getStorageSync('logs') || []
-    })
-    console.log('log.js onLoad');
   }
 })
