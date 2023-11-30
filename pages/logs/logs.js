@@ -1,8 +1,5 @@
 // logs.js
 const util = require('../../utils/util.js')
-import { areaList } from '@vant/area-data';
-import { useCascaderAreaData } from '@vant/area-data';
-//const cascaderAreaData = useCascaderAreaData();
 
 Page({
   data: {
@@ -15,7 +12,6 @@ Page({
     hometownValue: '',
     locationText: '',
     locationValue: '',
-    areaList,
     cascaderAreaData:[
       {
         text: '河北省',
