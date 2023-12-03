@@ -1,7 +1,7 @@
 <view>
   <scroll-view class="sv" scroll-y="true">
     <view wx:for="{{messages}}" wx:key="id">
-      {{text}}
+      {{item.text}}
     </view>
   </scroll-view>
 
