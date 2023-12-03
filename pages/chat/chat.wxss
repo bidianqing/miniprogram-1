@@ -1,0 +1,7 @@
+.sv{
+  height: 90vh;
+}
+
+.sendBar{
+  height: 10vh;
+}

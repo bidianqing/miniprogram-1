@@ -1,15 +1,15 @@
 <view>
-  <van-cell-group>
-    <van-field
-      model:value="{{ msg }}"
-      center
-      clearable
-      border="{{ false }}"
-      use-button-slot
-    >
-    <van-button slot="button" size="small" type="primary" bind:click="send">
-      发送
-    </van-button>
-  </van-field>
-</van-cell-group>
+  <scroll-view class="sv" scroll-y="true">
+    <view wx:for="{{messages}}" wx:key="id">
+      {{text}}
+    </view>
+  </scroll-view>
+
+  <view class="sendBar">
+    <van-cell-group>
+      <van-field model:value="{{ msg }}"  center    clearable  border="{{ false }}"  use-button-slot>
+        <van-button slot="button" size="small" type="primary" bind:click="send">发送</van-button>
+      </van-field>
+    </van-cell-group>
+  </view>
 </view>

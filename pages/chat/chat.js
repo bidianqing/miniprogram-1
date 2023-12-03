@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     msg: '',
+    messages: [{"id":22,"text":"sdf"}]
   },
   onShow(){
     let self = this;
@@ -12,5 +13,11 @@ Page({
   send: function(e) {
     let self = this;
     app.sendMessage(self.data.msg);
+    var msgList = self.data.messages;
+    msgList.push({
+      "id": new Date().getTime(),
+      "text": self.data.msg
+    });
+    self.setData({ messages: msgList })
   }
 })
