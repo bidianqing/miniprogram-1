@@ -4,4 +4,11 @@
 
 .sendBar{
   height: 10vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.input{
+  width: 100%;
 }

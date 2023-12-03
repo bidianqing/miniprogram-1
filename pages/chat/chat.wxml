@@ -6,10 +6,12 @@
   </scroll-view>
 
   <view class="sendBar">
-    <van-cell-group>
-      <van-field model:value="{{ msg }}"  center    clearable  border="{{ false }}"  use-button-slot>
-        <van-button slot="button" size="small" type="primary" bind:click="send">发送</van-button>
-      </van-field>
-    </van-cell-group>
+    <van-button>
+      <van-icon name="volume-o" />
+    </van-button>
+    <van-field model:value="{{ msg }}"  center    clearable  border="{{ true }}" class="input">
+      
+    </van-field>
+    <van-button slot="button" size="small" type="primary" bind:click="send">发送</van-button>
   </view>
 </view>
