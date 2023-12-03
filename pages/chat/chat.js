@@ -17,6 +17,6 @@ Page({
       "id": new Date().getTime(),
       "text": self.data.msg
     });
-    self.setData({ messages: self.data.messages, msg: '' })
+    self.setData({ messages: self.data.messages, msg: '', })
   }
 })

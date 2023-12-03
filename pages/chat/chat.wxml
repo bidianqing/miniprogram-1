@@ -6,12 +6,9 @@
   </scroll-view>
 
   <view class="sendBar">
-    <van-button>
-      <van-icon name="volume-o" />
-    </van-button>
-    <van-field model:value="{{ msg }}"  center    clearable  border="{{ true }}" class="input">
-      
-    </van-field>
-    <van-button slot="button" size="small" type="primary" bind:click="send">发送</van-button>
+    <van-icon name="volume-o" size="26px" class="emoji" />
+    <input type="text" class="input" model:value="{{msg}}"/>
+    <van-icon name="smile-o" size="26px" class="emoji" />
+    <van-button slot="button" size="small" type="primary" bind:click="send" class="btn_send">发送</van-button>
   </view>
 </view>

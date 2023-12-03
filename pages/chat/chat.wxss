@@ -1,14 +1,34 @@
 .sv{
-  height: 90vh;
+  height: auto;
 }
 
 .sendBar{
-  height: 10vh;
+  background-color: #F8F8F8;
+  width: 100%;
+  position: fixed;
+  height: 46px;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  align-items: center;
+  bottom: 0;
+  padding-bottom: 2px;
 }
 
 .input{
+  background-color: #ffffff;
   width: 100%;
+  margin: 2px 2px;
+  padding: 2px 5px;
+  height: 36px;
+}
+
+.emoji{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn_send{
+  height: 30px;
+  width: 100px;
+  margin-right: 3px;
 }
