@@ -30,5 +30,5 @@
 .btn_send{
   height: 30px;
   width: 100px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
