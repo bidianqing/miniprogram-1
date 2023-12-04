@@ -6,12 +6,11 @@
   background-color: #F8F8F8;
   width: 100%;
   position: fixed;
-  height: 46px;
+  height: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
   bottom: 0;
-  padding-bottom: 2px;
 }
 
 .input{
