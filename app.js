@@ -38,7 +38,7 @@ App({
     console.log('WebSocket连接状态：' + self.globalData.isConnected);
     if(self.globalData.isConnected === 0){
       wx.connectSocket({
-        url: 'wss://bidianqing.cn/chathub',
+        url: 'ws://192.168.0.104:5112/chathub',
         success: function(){
           console.log('connectSocket调用成功');
         }
@@ -49,7 +49,8 @@ App({
       console.log('开始握手');
       self.globalData.isConnected = 1;
       wx.sendSocketMessage({
-        data: '{"protocol":"json","version":1}'
+        //data: '{"protocol":"json","version":1}'
+        data: `{"protocol":"json", "version":1}${String.fromCharCode(0x1e)}`
       })
     })
   },
